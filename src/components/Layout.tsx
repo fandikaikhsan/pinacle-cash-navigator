@@ -1,21 +1,21 @@
-import { Outlet, NavLink } from "react-router-dom";
-import { LayoutDashboard, MessageSquare, TestTube2, User } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Outlet, NavLink } from "react-router-dom"
+import { LayoutDashboard, MessageSquare, TestTube2, User } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 const Layout = () => {
   const navItems = [
     { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
     { to: "/assistant", label: "Assistant", icon: MessageSquare },
     { to: "/sandbox", label: "Sandbox", icon: TestTube2 },
-  ];
+  ]
 
   const formatDate = () => {
     return new Intl.DateTimeFormat("en-US", {
       weekday: "short",
       month: "short",
       day: "numeric",
-    }).format(new Date());
-  };
+    }).format(new Date())
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -26,9 +26,9 @@ const Layout = () => {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center font-bold text-sm">
                 PNC
               </div>
-              <span className="font-bold text-lg">PINACLE</span>
+              <span className="font-bold text-lg">PROFITE</span>
             </div>
-            
+
             <nav className="hidden md:flex items-center gap-1">
               {navItems.map((item) => (
                 <NavLink
@@ -88,7 +88,7 @@ const Layout = () => {
         <Outlet />
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
